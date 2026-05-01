@@ -64,10 +64,10 @@ export default function ProjectsPage() {
   };
 
   return (
-    <div className="p-8 max-w-[1400px] mx-auto w-full min-h-screen bg-slate-50/30">
+    <div className="p-4 lg:p-8 max-w-[1400px] mx-auto w-full min-h-screen bg-slate-50/30">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-4xl font-extrabold text-slate-900 tracking-tighter">Projects</h1>
+          <h1 className="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tighter">Projects</h1>
           <p className="text-sm font-medium text-slate-400 mt-1">
             {projects.length} active project{projects.length !== 1 ? 's' : ''} in your ecosystem
           </p>
@@ -106,7 +106,7 @@ export default function ProjectsPage() {
           {projects.map(p => (
             <div 
               key={p._id} 
-              className="group bg-white rounded-[40px] p-8 shadow-xl shadow-slate-200/40 border border-slate-100 hover:border-emerald-200 transition-all duration-500 cursor-pointer flex flex-col relative overflow-hidden min-h-[320px]"
+              className="group bg-white rounded-[32px] lg:rounded-[40px] p-6 lg:p-8 shadow-xl shadow-slate-200/40 border border-slate-100 hover:border-emerald-200 transition-all duration-500 cursor-pointer flex flex-col relative overflow-hidden min-h-[320px]"
               onClick={() => navigate(`/projects/${p._id}`)}
             >
               <div className="absolute top-0 left-0 w-full h-2 group-hover:h-3 transition-all duration-500" style={{ backgroundColor: p.color }} />

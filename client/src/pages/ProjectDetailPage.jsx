@@ -133,22 +133,22 @@ export default function ProjectDetailPage() {
   );
 
   return (
-    <div className="p-8 max-w-[1400px] mx-auto min-h-screen bg-slate-50/30">
+    <div className="p-4 lg:p-8 max-w-[1400px] mx-auto min-h-screen bg-slate-50/30">
       {/* Header */}
       <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-12 pb-8 border-b border-slate-100">
         <div className="flex items-start gap-5">
           <button 
-            className="mt-1 w-10 h-10 flex items-center justify-center rounded-2xl border border-slate-100 bg-white text-slate-400 hover:text-emerald-600 hover:border-emerald-100 hover:shadow-lg transition-all" 
+            className="mt-1 w-9 h-9 lg:w-10 lg:h-10 flex items-center justify-center rounded-xl lg:rounded-2xl border border-slate-100 bg-white text-slate-400 hover:text-emerald-600 hover:border-emerald-100 hover:shadow-lg transition-all" 
             onClick={() => navigate('/projects')}
           >
-            <span className="material-symbols-outlined text-[20px]">arrow_back</span>
+            <span className="material-symbols-outlined text-[18px] lg:text-[20px]">arrow_back</span>
           </button>
           <div>
-            <div className="flex items-center gap-4">
-              <div className="w-5 h-5 rounded-full shadow-lg shadow-emerald-200" style={{ background: project?.color || '#10b981' }} />
-              <h1 className="text-4xl font-extrabold text-slate-900 tracking-tighter leading-none">{project?.title}</h1>
+            <div className="flex items-center gap-3 lg:gap-4">
+              <div className="w-4 h-4 lg:w-5 lg:h-5 rounded-full shadow-lg shadow-emerald-200" style={{ background: project?.color || '#10b981' }} />
+              <h1 className="text-2xl lg:text-4xl font-extrabold text-slate-900 tracking-tighter leading-none">{project?.title}</h1>
             </div>
-            {project?.description && <p className="text-sm font-medium text-slate-400 mt-4 max-w-2xl leading-relaxed">{project.description}</p>}
+            {project?.description && <p className="text-xs lg:text-sm font-medium text-slate-400 mt-3 lg:mt-4 max-w-2xl leading-relaxed">{project.description}</p>}
           </div>
         </div>
         
@@ -177,7 +177,7 @@ export default function ProjectDetailPage() {
         {COLUMNS.map(col => {
           const colTasks = tasks.filter(t => t.status === col.key);
           return (
-            <div key={col.key} className="bg-white rounded-[32px] border border-slate-100 p-6 flex flex-col h-full min-h-[600px] shadow-xl shadow-slate-200/30 relative group/col">
+            <div key={col.key} className="bg-white rounded-[24px] lg:rounded-[32px] border border-slate-100 p-4 lg:p-6 flex flex-col h-full min-h-[500px] lg:min-h-[600px] shadow-xl shadow-slate-200/30 relative group/col">
               <div className="flex justify-between items-center mb-8 px-2">
                 <div className={`text-[10px] font-bold uppercase tracking-[0.2em] flex items-center gap-3 ${col.color}`}>
                   <div className="relative flex items-center justify-center">
@@ -206,7 +206,7 @@ export default function ProjectDetailPage() {
                   return (
                     <div 
                       key={task._id} 
-                      className={`group relative bg-white border rounded-[28px] p-5 cursor-pointer transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-200/40 hover:-translate-y-1 overflow-hidden ${overdue ? 'border-rose-100' : 'border-slate-50 hover:border-emerald-200'}`} 
+                      className={`group relative bg-white border rounded-[20px] lg:rounded-[28px] p-4 lg:p-5 cursor-pointer transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-200/40 hover:-translate-y-1 overflow-hidden ${overdue ? 'border-rose-100' : 'border-slate-50 hover:border-emerald-200'}`} 
                       onClick={() => setViewTask(task)}
                     >
                       <div className="space-y-4 relative z-10">

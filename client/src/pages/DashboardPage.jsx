@@ -110,7 +110,8 @@ export default function DashboardPage() {
   return (
     <div className="bg-slate-50 min-h-screen font-manrope antialiased text-slate-900 pb-10">
       {/* TopAppBar */}
-      <header className="bg-white border-b border-slate-200 shadow-sm flex justify-between items-center w-full px-8 py-5 sticky top-0 z-30">
+      {/* TopAppBar - Desktop Only */}
+      <header className="hidden lg:flex bg-white border-b border-slate-200 shadow-sm justify-between items-center w-full px-8 py-5 sticky top-0 z-30">
         <div className="flex flex-col">
           <h1 className="text-2xl font-black text-slate-900 tracking-tighter">
             {isAdmin ? 'Team Commander' : 'My Workspace'}
@@ -132,10 +133,21 @@ export default function DashboardPage() {
       </header>
 
       {/* Dashboard Canvas */}
-      <div className="p-8 space-y-10 max-w-[1600px] mx-auto">
+      <div className="p-4 lg:p-8 space-y-8 lg:space-y-10 max-w-[1600px] mx-auto">
+        
+        {/* Mobile Page Title */}
+        <div className="lg:hidden mb-2">
+          <h1 className="text-3xl font-black text-slate-900 tracking-tighter">
+            {isAdmin ? 'Team Commander' : 'My Workspace'}
+          </h1>
+          <div className="flex items-center gap-2 mt-1">
+            <span className={`w-2 h-2 rounded-full ${isAdmin ? 'bg-indigo-500' : 'bg-emerald-500'} animate-pulse`} />
+            <span className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">{isAdmin ? 'Global Administrator' : 'Productivity Mode'}</span>
+          </div>
+        </div>
         
         {/* Welcome Section */}
-        <section className="bg-gradient-to-br from-emerald-600 via-emerald-700 to-slate-900 rounded-[40px] p-12 text-white relative overflow-hidden shadow-2xl shadow-emerald-200/50 group">
+        <section className="bg-gradient-to-br from-emerald-600 via-emerald-700 to-slate-900 rounded-[32px] lg:rounded-[40px] p-8 lg:p-12 text-white relative overflow-hidden shadow-2xl shadow-emerald-200/50 group">
            <div className="absolute top-0 right-0 w-1/3 h-full bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.2),transparent)] opacity-60 group-hover:scale-110 transition-transform duration-1000" />
            <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-white/10 rounded-full blur-[120px] animate-pulse" />
            <div className="absolute top-10 right-10 opacity-20 group-hover:rotate-12 transition-transform duration-700">

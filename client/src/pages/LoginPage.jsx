@@ -39,14 +39,14 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4 lg:p-8 relative overflow-hidden font-manrope antialiased">
+    <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4 lg:p-8 relative overflow-x-hidden font-manrope antialiased">
       {/* Dynamic Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -top-[20%] -left-[10%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] animate-pulse" />
         <div className="absolute -bottom-[20%] -right-[10%] w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
-      <div className="w-full max-w-[1100px] grid lg:grid-cols-2 bg-white rounded-[40px] shadow-2xl shadow-slate-200/50 border border-slate-100 overflow-hidden relative z-10 min-h-[700px]">
+      <div className="w-full max-w-[1100px] grid lg:grid-cols-2 bg-white rounded-[32px] lg:rounded-[40px] shadow-2xl shadow-slate-200/50 border border-slate-100 overflow-hidden relative z-10 lg:min-h-[700px]">
         {/* Left Side: Branding & SaaS Identity */}
         <div className="hidden lg:flex flex-col justify-between p-16 bg-slate-900 text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-30">
